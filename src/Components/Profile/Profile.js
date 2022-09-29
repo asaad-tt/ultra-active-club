@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { addToDb, getStoredProfile } from '../../utilities/profileDb';
 import BreakTime from '../BreakTime/BreakTime';
 import './Profile.css'
 
@@ -12,11 +13,21 @@ const Profile = (props) => {
         total = total + item.timeRequired;
     }
      
-    const breakTime = ['10s', '20s', '30s', '40s', '50s']
+    const breakTime = ['10s', '20s', '30s', '40s', '50s'];
+
+   useEffect(()=>{
+    const storedProfile = getStoredProfile();
+    for(const id in storedProfile){
+          setTime(id)
+        }
+    
+   },[])
 
     const handleBreakTime = (singleTime) =>{
         // console.log(singleTime);
         setTime(singleTime);
+        addToDb(singleTime);
+        
     }
 
     return (
@@ -66,6 +77,10 @@ const Profile = (props) => {
     
                 <p className="bg-blue-400 py-4 px-4 text-black font-semibold rounded">Break time: {time}<span className="ml-10 text-gray-700"></span></p>
 
+            </div>
+
+            <div>
+            <button className="btn btn-warning mt-10 w-full">Activity Completed</button>
             </div>
             
                 
