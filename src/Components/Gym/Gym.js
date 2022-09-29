@@ -27,7 +27,7 @@ const Gym = () => {
         <div className="gymRoom_container">
             <div className="gym_container mt-10 ">
                <Header></Header>
-               <h1>Select today's exercise</h1>
+               <h1 className="text-2xl ml-10">Select today's exercise</h1>
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                     {
                     products.map(product => <Fitness 

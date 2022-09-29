@@ -18,7 +18,7 @@ const Question = () => {
             </div>
 
             <div className='second_question mt-4'>
-                <h1 className="text-2xl font-bold mb-1">Q: What is difference between state vs Prop ?</h1>
+                <h1 className="text-2xl font-bold mb-1">Q: What is difference between state vs Props ?</h1>
 
                 <p className="text-xl"><span className="font-bold">Ans:</span>
                 <span className="font-bold ml-2">state</span> <br />
