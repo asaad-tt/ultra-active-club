@@ -2,11 +2,11 @@ import React from 'react';
 
 const Question = () => {
     return (
-        <div className='question_section mt-10 p-10'>
+        <div className='question_section mt-10 p-20'>
             <h1 className="text-5xl text-center mb-10 text-amber-500 font-bold">Question and Answer</h1>
             <div className='first_question'>
                 <h1 className="text-2xl font-bold mb-1">Q: How does react work?</h1>
-                <p className="text-xl"><span className="font-semibold">Ans:</span>
+                <p className="text-xl"><span className="font-bold mr-3">Ans:</span>
                     At its very core, React just maintains a tree for us  and it will do efficient diff computations on the nodes. our HTML code is pretty much a tree, or at least that's how our browser treats it. It constructs what is called the Document Object Model or DOM as it's often referred to. <br />
 
                     The HTML DOM is pretty much an interface (API) to modify the nodes in it. It contains different methods like getElementById or the new querySelector to target each node and we use JS to work with the DOM. This means whenever we want to change content, we are modifying the DOM but it's quite expensive. Why is quite expensive, that's the question. <br />
@@ -17,11 +17,29 @@ const Question = () => {
                 </p>
             </div>
 
-            <div className='second_question'>
-                <h1 className="text-2xl font-bold mb-1">Q: How does react work?</h1>
-                <p className="text-xl"><span className="font-semibold">Ans:</span>
+            <div className='second_question mt-4'>
+                <h1 className="text-2xl font-bold mb-1">Q: What is difference between state vs Prop ?</h1>
 
+                <p className="text-xl"><span className="font-bold">Ans:</span>
+                <span className="font-bold ml-2">state</span> <br />
+                1. React state is mutable and its value can be changed as per requirment. <br />
+                2. it is set by parent component. <br />
+                3. State is local to a component and can not be used in other components.   <br />
+
+                <span className="font-bold ml-2">Props</span> <br />
+                1. Props are immutable , that is their content can not be changed once assigned . <br />
+                2. props are set by event handlers that is they are completely managed by component itself. <br />
+                3. Props allows Child Components to read values from parent components .  
                 </p>
+            </div>
+
+            <div className='third_question mt-4'>
+                <h1 className="text-2xl font-bold mb-1">Q: without data load what is the use of useEffect  ?</h1>
+                <p className="text-xl"><span className="font-bold mr-3">Ans:</span>
+                By using this Hook, we tell React that your component needs to do something after render. React will remember the function we passed (we'll refer to it as our “effect”), and call it later after performing the DOM updates.
+                </p>
+
+
             </div>
         </div>
     );
