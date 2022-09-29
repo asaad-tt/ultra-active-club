@@ -20,7 +20,7 @@ const Fitness = (props) => {
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <p>Time required: {timeRequired}</p>
                         <div className="card-actions">
-                            <button onClick={handleAddToList}  className="btn btn-primary">Add to list</button>
+                            <button onClick={()=>handleAddToList(props.product)}  className="btn btn-primary">Add to list</button>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import './Gym.css'
 
 const Gym = () => {
     const [products, setProducts] = useState([]);
+    const [profile, setProfile] = useState([]);
 
     useEffect(()=>{
         fetch('data.json')
@@ -13,8 +14,8 @@ const Gym = () => {
         .then(data => setProducts(data))
     },[]);
 
-    const handleAddToList = () =>{
-        console.log('clicked')
+    const handleAddToList = (product) =>{
+        console.log(product)
     }
 
     return (
