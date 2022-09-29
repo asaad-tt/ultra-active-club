@@ -1,0 +1,38 @@
+[
+    {
+      "id": "1",
+      "timeRequired": 120,
+      "img": "./images/bicep.jpg",
+      "name": "Bicep"
+    },
+    {
+      "id": "2",
+      "timeRequired": 60,
+      "img": "./images/abs.jpg",
+      "name": "Abs"
+    },
+    {
+      "id": "3",
+      "timeRequired": 60,
+      "img": "./images/chinup.jpg",
+      "name": "Chin up"
+    },
+    {
+      "id": "4",
+      "timeRequired": 45,
+      "img": "./images/squat.jpg",
+      "name": "Squat"
+    },
+    {
+      "id": "5",
+      "timeRequired": 180,
+      "img": "./images/rope.jpg",
+      "name": "Rope exercise"
+    },
+    {
+      "id": "6",
+      "timeRequired": 160,
+      "img": "./images/tredmill.jpg",
+      "name": "Tredmill"
+    }
+  ]
