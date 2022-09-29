@@ -8,6 +8,7 @@ const Header = () => {
             <img  src={logo} alt="" />
             <p className="text-3xl">Strength and Fitness Palace</p>
         </div>
+        
     );
 };
 

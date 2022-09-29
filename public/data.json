@@ -2,37 +2,37 @@
     {
       "id": "1",
       "timeRequired": 120,
-      "img": "./images/bicep.jpg",
+      "img": "https://i.ibb.co/pJM0VbJ/bicep.jpg",
       "name": "Bicep"
     },
     {
       "id": "2",
       "timeRequired": 60,
-      "img": "./images/abs.jpg",
+      "img": "https://i.ibb.co/GP4837y/abs.jpg",
       "name": "Abs"
     },
     {
       "id": "3",
       "timeRequired": 60,
-      "img": "./images/chinup.jpg",
+      "img": "https://i.ibb.co/XYt4v4v/chinup.jpg",
       "name": "Chin up"
     },
     {
       "id": "4",
       "timeRequired": 45,
-      "img": "./images/squat.jpg",
+      "img": "https://i.ibb.co/StnfnM5/squat.jpg",
       "name": "Squat"
     },
     {
       "id": "5",
       "timeRequired": 180,
-      "img": "./images/rope.jpg",
+      "img": "https://i.ibb.co/097sSh5/rope.jpg",
       "name": "Rope exercise"
     },
     {
       "id": "6",
       "timeRequired": 160,
-      "img": "./images/tredmill.jpg",
+      "img": "https://i.ibb.co/WzvrjJd/tredmill.jpg",
       "name": "Tredmill"
     }
   ]
