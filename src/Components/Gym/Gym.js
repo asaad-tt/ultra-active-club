@@ -3,6 +3,7 @@ import Fitness from '../Fitness/Fitness';
 
 import Header from '../Header/Header';
 import Profile from '../Profile/Profile';
+
 import './Gym.css'
 
 const Gym = () => {
@@ -40,6 +41,7 @@ const Gym = () => {
             <div className="profile_container">
                 <Profile profile={profile}></Profile>
             </div>
+          
         </div>
     );
 };
