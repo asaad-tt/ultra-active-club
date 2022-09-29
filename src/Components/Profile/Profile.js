@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BreakTime from '../BreakTime/BreakTime';
 import './Profile.css'
 
 const Profile = (props) => {
+    const [time, setTime] = useState(0);
+
     const {profile} = props;
     // console.log(profile);
     let total = 0;
     for(const item of profile){
         total = total + item.timeRequired;
+    }
+     
+    const breakTime = ['10s', '20s', '30s', '40s', '50s']
+
+    const handleBreakTime = (singleTime) =>{
+        // console.log(singleTime);
+        setTime(singleTime);
     }
 
     return (
@@ -34,14 +44,27 @@ const Profile = (props) => {
                 </div>
             </div>
 
-            <div className='break'>
-
+            <div className='flex break my-5 bg-gray-100 text-black p-4'>
+                {
+                    breakTime.map(singleTime=> <BreakTime
+                    key={singleTime} 
+                    singleTime={singleTime}
+                    handleBreakTime={handleBreakTime}
+                    ></BreakTime>)
+                }
+                
             </div>
 
             <div className="exercise_details">
                 <h2>Exercise Details</h2>
                 
-                <p className="bg-blue-400 py-4 px-4 text-black font-semibold">Exercise time: <span className="ml-10 text-gray-700">{total}</span><span className='text-gray-700 ml-1'>sec</span></p>
+                <p className="bg-blue-400 py-4 px-4 text-black font-semibold rounded">Exercise time: <span className="ml-10 text-gray-700">{total}</span><span className='text-gray-700 ml-1'>sec</span></p>
+
+            </div>
+
+            <div className="break_time mt-4">
+    
+                <p className="bg-blue-400 py-4 px-4 text-black font-semibold rounded">Break time: {time}<span className="ml-10 text-gray-700"></span></p>
 
             </div>
             
