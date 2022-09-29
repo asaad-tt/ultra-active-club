@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { addToDb, getStoredProfile } from '../../utilities/profileDb';
+import React, { useState } from 'react';
+
 import BreakTime from '../BreakTime/BreakTime';
 import './Profile.css';
 import Swal from 'sweetalert2'
@@ -16,21 +16,14 @@ const Profile = (props) => {
      
     const breakTime = ['10s', '20s', '30s', '40s', '50s'];
 
-   useEffect(()=>{
-    const storedProfile = getStoredProfile();
-    for(const id in storedProfile){
-          setTime(id)
-        }
-    
-   },[])
+      
 
     const handleBreakTime = (singleTime) =>{
         // console.log(singleTime);
-        setTime(singleTime);
-        addToDb(singleTime);
-        
+        setTime(singleTime); 
+        localStorage.setItem('timeSpan', singleTime) 
     }
-
+   
     const handleActivity =()=>{
         Swal.fire(
             'Good job!',
@@ -40,7 +33,7 @@ const Profile = (props) => {
     }
 
     return (
-        <div className='profile_section m-5'>
+        <div className='profile_section mx-5 my-10'>
             <div className="flex"> 
                 <img className="w-16 rounded" src="https://i.ibb.co/kX0DDXc/287963369-106020238814895-4210129157693858149-n.jpg" alt="" />
                 <div className="ml-5">
@@ -55,7 +48,7 @@ const Profile = (props) => {
                     <p>Weight</p>
                 </div>
                 <div >
-                    <p>6.5</p>
+                    <p>5.7</p>
                     <p>Height</p>
                 </div>
                 <div>
@@ -63,7 +56,8 @@ const Profile = (props) => {
                     <p>age</p>
                 </div>
             </div>
-
+            
+            <h2 className='mt-10 text-2xl font-bold'>Add a Break</h2>
             <div className='rounded flex break my-5 bg-gray-100 text-black p-4'>
                 {
                     breakTime.map(singleTime=> <BreakTime
@@ -76,7 +70,7 @@ const Profile = (props) => {
             </div>
 
             <div className="exercise_details">
-                <h2>Exercise Details</h2>
+                <h2 className="font-bold text-2xl">Exercise Details</h2>
                 
                 <p className="bg-blue-400 py-4 px-4 text-black font-semibold rounded">Exercise time: <span className="ml-10 text-gray-700">{total}</span><span className='text-gray-700 ml-1'>sec</span></p>
 
@@ -84,7 +78,7 @@ const Profile = (props) => {
 
             <div className="break_time mt-4">
     
-                <p className="bg-blue-400 py-4 px-4 text-black font-semibold rounded">Break time: {time}<span className="ml-10 text-gray-700"></span></p>
+                <p id='timeDisplay' className="bg-blue-400 py-4 px-4 text-black font-semibold rounded">Break time: <span className="ml-10 text-gray-700">{time}</span></p>
 
             </div>
 

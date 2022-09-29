@@ -2,7 +2,7 @@ import React from 'react';
 
 const Fitness = (props) => {
     // console.log(props);
-    const { id, timeRequired, img, name } = props.product;
+    const { id, timeRequired, img, name, description } = props.product;
     const {handleAddToProfile} = props;
 
    
@@ -17,7 +17,7 @@ const Fitness = (props) => {
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">{name}</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p>{description}</p>
                         <p>Time required: {timeRequired}</p>
                         <div className="card-actions">
                             <button onClick={()=>handleAddToProfile(props.product)}  className="btn btn-primary">Add to list</button>
