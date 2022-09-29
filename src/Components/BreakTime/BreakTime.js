@@ -7,7 +7,7 @@ const BreakTime = (props) => {
    
     return (
         <div className="px-3 ">
-            <p onClick={()=>handleBreakTime(singleTime)}  className="bg-orange-500 cursor-pointer p-1 rounded-full">{singleTime}</p>
+            <p onClick={()=>handleBreakTime(singleTime)}  className="bg-primary cursor-pointer p-1 rounded-full">{singleTime}</p>
         </div>
     );
 };

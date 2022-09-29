@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { addToDb, getStoredProfile } from '../../utilities/profileDb';
 import BreakTime from '../BreakTime/BreakTime';
-import './Profile.css'
+import './Profile.css';
+import Swal from 'sweetalert2'
 
 const Profile = (props) => {
     const [time, setTime] = useState(0);
@@ -30,6 +31,14 @@ const Profile = (props) => {
         
     }
 
+    const handleActivity =()=>{
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+          )
+    }
+
     return (
         <div className='profile_section m-5'>
             <div className="flex"> 
@@ -40,22 +49,22 @@ const Profile = (props) => {
                 </div>
             </div>
 
-            <div className="flex bg-gray-100 text-black mt-5">
+            <div className="flex justify-between py-2 px-2 rounded bg-gray-100 text-black mt-5">
                 <div>
                     <p>68<small>kg</small></p>
                     <p>Weight</p>
                 </div>
-                <div className="ml-3">
+                <div >
                     <p>6.5</p>
                     <p>Height</p>
                 </div>
-                <div className="ml-3">
+                <div>
                     <p>25 <small>years</small></p>
                     <p>age</p>
                 </div>
             </div>
 
-            <div className='flex break my-5 bg-gray-100 text-black p-4'>
+            <div className='rounded flex break my-5 bg-gray-100 text-black p-4'>
                 {
                     breakTime.map(singleTime=> <BreakTime
                     key={singleTime} 
@@ -80,7 +89,7 @@ const Profile = (props) => {
             </div>
 
             <div>
-            <button className="btn btn-warning mt-10 w-full">Activity Completed</button>
+            <button onClick={handleActivity} className="btn btn-primary mt-10 w-full">Activity Completed</button>
             </div>
             
                 
