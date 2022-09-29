@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Fitness from '../Fitness/Fitness';
 
 import Header from '../Header/Header';
+import Profile from '../Profile/Profile';
 import './Gym.css'
 
 const Gym = () => {
     const [products, setProducts] = useState([]);
     const [profile, setProfile] = useState([]);
+    
 
     useEffect(()=>{
         fetch('data.json')
@@ -14,8 +16,10 @@ const Gym = () => {
         .then(data => setProducts(data))
     },[]);
 
-    const handleAddToList = (product) =>{
-        console.log(product)
+    const handleAddToProfile = (product) =>{
+        // console.log(product);
+        const newProfile = [...profile, product];
+        setProfile(newProfile);
     }
 
     return (
@@ -28,13 +32,13 @@ const Gym = () => {
                     products.map(product => <Fitness 
                         key={product.id}
                         product={product}
-                        handleAddToList={handleAddToList}
+                        handleAddToProfile={handleAddToProfile}
                         ></Fitness>)
                     }
                 </div>
             </div>
             <div className="profile_container">
-                <h1>Gym profile</h1>
+                <Profile profile={profile}></Profile>
             </div>
         </div>
     );
